@@ -1,10 +1,8 @@
 import { useState, useEffect, useRef } from "react"
 import './App.css'
 
-
-
-const WS_URL = "ws://localhost:5000"
-const API_URL = "http://localhost:5000/api"
+const WS_URL = "https://4-in-a-row-ruddy.vercel.app"
+const API_URL = "https://4-in-a-row-ruddy.vercel.app/api"
 
 function App() {
   const [username, setUsername] = useState("")
