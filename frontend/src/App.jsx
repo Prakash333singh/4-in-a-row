@@ -248,31 +248,38 @@ function App() {
 
           {leaderboard.length > 0 && (
             <div className="leaderboard">
-              <h2>🏅 Leaderboard</h2>
+              <h3>🏅 Leaderboard</h3>
               <table>
                 <thead>
                   <tr>
-                    <th>Rank</th>
+                    <th>#</th>
                     <th>Player</th>
+                    <th>Status</th>
                     <th>Wins</th>
-                    <th>Losses</th>
-                    <th>Draws</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {leaderboard.map((p, i) => (
-                    <tr key={p.username}>
-                      <td>{i + 1}</td>
-                      <td>{p.username}</td>
-                      <td>{p.wins}</td>
-                      <td>{p.losses}</td>
-                      <td>{p.draws}</td>
-                    </tr>
-                  ))}
+                  {leaderboard.slice(0, 5).map((p, i) => {
+                    const isOnline = onlinePlayers.includes(p.username);
+                    return (
+                      <tr key={p.username}>
+                        <td>{i + 1}</td>
+                        <td>{p.username}</td>
+                        <td>
+                          <span
+                            className={`status-dot ${isOnline ? "online" : "offline"}`}
+                          ></span>
+                          {isOnline ? "Online" : "Offline"}
+                        </td>
+                        <td>{p.wins}</td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             </div>
           )}
+
         </div>
       </div>
     );
@@ -347,31 +354,39 @@ function App() {
         )}
 
         {/* ---- Leaderboard sidebar ---- */}
-        <div className="sidebar">
-          {leaderboard.length > 0 && (
-            <div className="leaderboard">
-              <h3>🏅 Leaderboard</h3>
-              <table>
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>Player</th>
-                    <th>Wins</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {leaderboard.slice(0, 5).map((p, i) => (
+        {leaderboard.length > 0 && (
+          <div className="leaderboard">
+            <h3>🏅 Leaderboard</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Player</th>
+                  <th>Status</th>
+                  <th>Wins</th>
+                </tr>
+              </thead>
+              <tbody>
+                {leaderboard.slice(0, 5).map((p, i) => {
+                  const isOnline = onlinePlayers.includes(p.username);
+                  return (
                     <tr key={p.username}>
                       <td>{i + 1}</td>
                       <td>{p.username}</td>
+                      <td>
+                        <span
+                          className={`status-dot ${isOnline ? "online" : "offline"}`}
+                        ></span>
+                        {isOnline ? "Online" : "Offline"}
+                      </td>
                       <td>{p.wins}</td>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          )}
-        </div>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        )}
       </div>
 
       {/* ---- Win Popup Modal ---- */}
