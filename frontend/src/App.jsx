@@ -1,8 +1,11 @@
 import { useState, useEffect, useRef } from "react"
 import './App.css'
 
-const WS_URL = "https://4-in-a-row-ruddy.vercel.app"
-const API_URL = "https://4-in-a-row-ruddy.vercel.app/api"
+
+const WS_URL="https://four-in-a-row-czxw.onrender.com/"
+const API_URL="https://four-in-a-row-czxw.onrender.com/api"
+// const WS_URL = "https://4-in-a-row-ruddy.vercel.app/"
+// const API_URL = "https://4-in-a-row-ruddy.vercel.app/api"
 
 function App() {
   const [username, setUsername] = useState("")
