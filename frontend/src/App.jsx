@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from "react"
-import "./App.css"
+import './App.css'
+
+
 
 const WS_URL = "ws://localhost:5000"
 const API_URL = "http://localhost:5000/api"
@@ -285,6 +287,13 @@ function App() {
                       : ""
                   }`}
                 >
+                  <span
+                    className={`status-indicator ${
+                      onlinePlayers.includes(gameState.player1)
+                        ? "online"
+                        : "offline"
+                    }`}
+                  ></span>
                   {gameState.player1} (X)
                   {gameState.currentPlayer === gameState.player1 && " ← Turn"}
                 </div>
@@ -296,6 +305,15 @@ function App() {
                       : ""
                   }`}
                 >
+                  <span
+                    className={`status-indicator ${
+                      gameState.player2 === "BOT"
+                        ? "online"
+                        : onlinePlayers.includes(gameState.player2)
+                        ? "online"
+                        : "offline"
+                    }`}
+                  ></span>
                   {gameState.player2} (O)
                   {gameState.currentPlayer === gameState.player2 && " ← Turn"}
                 </div>
@@ -356,6 +374,7 @@ function App() {
                     key={player}
                     className={player === username ? "current-player" : ""}
                   >
+                    <span className="status-indicator online"></span>
                     {player}
                     {player === username && " (You)"}
                   </li>
@@ -379,7 +398,18 @@ function App() {
                   {leaderboard.slice(0, 5).map((player, index) => (
                     <tr key={player.username}>
                       <td>{index + 1}</td>
-                      <td>{player.username}</td>
+                      <td>
+                        <span className="player-name-with-status">
+                          <span
+                            className={`status-indicator ${
+                              onlinePlayers.includes(player.username)
+                                ? "online"
+                                : "offline"
+                            }`}
+                          ></span>
+                          {player.username}
+                        </span>
+                      </td>
                       <td>{player.wins}</td>
                     </tr>
                   ))}
