@@ -1,5 +1,4 @@
-const { PrismaClient } = require("@prisma/client")
-const prisma = new PrismaClient()
+const {prisma} = require('./lib/prisma');
 
 // Safe leaderboard update function
 const updateLeaderboard = async (player1, player2, winner) => {

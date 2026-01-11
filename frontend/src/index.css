@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #1e3c72;
+  background: #4983ee;
   color: white;
   overflow-x: hidden;
 }
@@ -21,14 +21,14 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a1d23;
+  background: #4983ee;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(145deg, #61dafb, #21a1f1);
+  background: linear-gradient(145deg, #4983ee, #21a1f1);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(145deg, #21a1f1, #1890d1);
+  background: linear-gradient(145deg, #4983ee, #21a1f1);
 }

@@ -320,9 +320,9 @@ function App() {
                 <div
                   key={col}
                   className={`column-indicator ${gameState?.status === "active" &&
-                      gameState?.currentPlayer === username
-                      ? "clickable"
-                      : ""
+                    gameState?.currentPlayer === username
+                    ? "clickable"
+                    : ""
                     }`}
                   onClick={() => handleColumnClick(col)}
                 >
