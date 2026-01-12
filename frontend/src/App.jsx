@@ -352,7 +352,8 @@ function App() {
             🎮 New Game
           </button>
         )}
-
+      </div>
+      <div className="leaderboard-wrapper">
         {/* ---- Leaderboard sidebar ---- */}
         {leaderboard.length > 0 && (
           <div className="leaderboard">
