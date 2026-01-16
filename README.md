@@ -4,6 +4,7 @@ A real-time multiplayer Version of Connect Four (4 in a Row) built with Node.js,
 
 ## 🎮 Features
 
+
 - **Real-time 1v1 gameplay** using WebSockets
 - **Competitive AI bot** as fallback opponent (10-second matchmaking timeout)
 - **Strategic bot logic** that blocks wins and creates winning opportunities
