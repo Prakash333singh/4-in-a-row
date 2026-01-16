@@ -1,6 +1,6 @@
 # 🎯 4 in a Row - Real-time Multiplayer Game
 
-A real-time multiplayer version of Connect Four (4 in a Row) built with Node.js, WebSockets, React, PostgreSQL, and Kafka for analytics.
+A real-time multiplayer Version of Connect Four (4 in a Row) built with Node.js, WebSockets, React, PostgreSQL, and Kafka for analytics.
 
 ## 🎮 Features
 
