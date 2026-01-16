@@ -1,11 +1,11 @@
 .App {
   margin-top: 2px;
-  background: #6394ef;
+  background: #3373e8;
   animation: gradientShift 15s ease infinite;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 30px;
+  gap: 28px;
 }
 
 @keyframes gradientShift {
